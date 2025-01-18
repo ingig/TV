@@ -1,5 +1,0 @@
-Stöð2
-- ffmpeg -i "https://live.visir.is/hls-live/visir.smil/playlist.m3u8?DVR" -c copy Stöð2.ts
-- set %tsFilePath% = "Stöð2.ts"
-- render ../ui/video.template, write to %video%
-- write out %video%
