@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV App</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            height: 768px;
+            width: 1024px;
+        }
+        .channels {
+            width: 140px;
+            background-color: #1a1a1a;
+            overflow-y: auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .channels ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .channels li {
+            margin: 5px 0;
+            padding: 5px;
+            cursor: pointer;
+            background: #333;
+            border-radius: 4px;
+        }
+        .channels li:hover {
+            background: #555;
+        }
+        .video-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="channels">
+        <ul>
+            {{ for channel in channels }}
+            <li><a href="plang:Channel?name={{ channel }}">{{ channel }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+    <div class="video-container">
+        <video id="tv-video" controls autoplay></video>
+    </div>
+</body>
+</html>

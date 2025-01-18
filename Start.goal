@@ -1,0 +1,14 @@
+Start
+- start window app, title: "TV", call TV, framework:uikit(default)
+
+TV
+- set default value %tsFileType% = "video/mp4"
+- get all files in "/channels", write to %channels%
+- [code] remove ".goal" from %channels%, write to %channels%
+- render ui/TV.template, write to %content%
+- write out %content%, channel:"window"|"console"|"websocket"|"message"|"email"|"goal" 
+        content type:"json"|"text"|"binary", goal=%goal% to=%address%, subject=%subject%, flush
+
+Channel
+- call goal %name%
+            
